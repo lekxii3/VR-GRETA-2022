@@ -11,7 +11,7 @@ public class Tiroir : MonoBehaviour
   public XRSimpleInteractable poignet;
 
   public bool tiroirLinked = false;
-  public Transform poignée;
+  public Transform poignee;
   
 
   public void Update()
@@ -19,21 +19,21 @@ public class Tiroir : MonoBehaviour
     transform.position = new Vector3(0f, 0f, -0f);
   }
 
-  public void OnEnable()
-  {
-    poignet.selectEntered.AddListener(TiroirPressed);
-    poignet.selectEntered.AddListener(TiroirReleased);
-  }
+  //public void OnEnable()
+  //{
+    //poignet.selectEntered.AddListener(TiroirPressed);
+    //poignet.selectExited.AddListener(TiroirReleased);
+  //}
 
-  public void OnDisable()
-  {
-    poignet.selectExited.RemoveListener(TiroirPressed);
-    poignet.selectExited.RemoveListener(TiroirReleased);
-  }
+  //public void OnDisable()
+  //{
+    //poignet.selectEntered.RemoveListener(TiroirPressed);
+   // poignet.selectExited.RemoveListener(TiroirReleased);
+  //}
 
 
 
-  public void TiroirPressed(SelectEnterEvent args)
+  public void TiroirPressed(SelectEnterEventArgs args)
   {
     if (tiroirLinked)
     {
@@ -45,12 +45,9 @@ public class Tiroir : MonoBehaviour
     // le tiroir est freeze en rotation et bouge seulement sur un seul axe Z de son propre Transform 
   }
 
-  public void TiroirReleased(SelectExitEvent args)
+  public void TiroirReleased(SelectExitEventArgs args)
   {
-    if (t)
-    {
-      
-    }
+    
     // je lache le tiroir et le tiroir ne suit plus la main 
   }
   

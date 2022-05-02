@@ -14,15 +14,52 @@ public class BaseActionnable : MonoBehaviour
 
     private void OnEnable()
     {
-        interactable.selectEntered.AddListener(EnterSelect);
+        interactable.selectEntered.AddListener(StartSelect);
+        interactable.selectExited.AddListener(StopSelect);
     }
     private void OnDisable()
     {
-        interactable.selectEntered.RemoveListener(EnterSelect);
+        interactable.selectEntered.RemoveListener(StartSelect);
+        interactable.selectExited.RemoveListener(StopSelect);
     }
 
-    protected void EnterSelect(SelectEnterEvent args)
+    protected void StartSelect(SelectEnterEventArgs args)
     {
-        
+        if (!actionInstantannee)
+        {
+            isSelected = true;
+            interactorPosition = args.interactorObject.transform.position;
+        }
+        else
+        {
+            ActionInstant();
+        }
+    }
+
+    protected void StopSelect(SelectExitEventArgs args)
+    {
+        if (!actionInstantannee)
+        {
+            isSelected = false;
+            interactorPosition = Vector3.zero;
+        }
+    }
+
+    protected virtual void ActionInstant()
+    {
+        // script light
+    }
+
+    protected virtual void ActionContinue(Vector3 interactorPositionArgs)
+    {
+        // script tiroir 
+    }
+
+    private void Update()
+    {
+        if (isSelected)
+        {
+            ActionContinue(interactorPosition);
+        }
     }
 }

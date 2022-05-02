@@ -1221,12 +1221,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 448561644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab4adda431e741248b6c4d55a2bc5bc0, type: 3}
+  m_Script: {fileID: 11500000, guid: bf1ffeb6c67ef7a4cb91be4a2086a521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 448561649}
-  light: {fileID: 981590975}
-  lightON: 1
+  interactable: {fileID: 448561649}
+  actionInstantannee: 1
+  isSelected: 0
+  interactorPosition: {x: 0, y: 0, z: 0}
+  spotlight: {fileID: 1485231911}
+  lightobject: {fileID: 242799090}
+  state: 1
 --- !u!1 &510911722
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,7 +3940,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 981590974}
-  - component: {fileID: 981590975}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -3960,20 +3963,6 @@ Transform:
   m_Father: {fileID: 1225450806}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &981590975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981590973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5647b07628e649d49a901f03871ac811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spotlight: {fileID: 1485231911}
-  lightobject: {fileID: 242799090}
 --- !u!1 &992038131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4367,7 +4356,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20818
+  m_Name: pb_Mesh22684
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4781,7 +4770,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20574
+  m_Name: pb_Mesh22440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11088,7 +11077,6 @@ GameObject:
   - component: {fileID: 3008133853196538003}
   - component: {fileID: 3008133853196538004}
   - component: {fileID: 3008133853196538002}
-  - component: {fileID: 3008133853196538001}
   m_Layer: 0
   m_Name: Poignee
   m_TagString: Untagged
@@ -11096,18 +11084,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3008133853196538001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3008133853196538000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356a81396b9e8824ab7980c90065f975, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3008133853196538002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11121,13 +11097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 307408120}
-  m_Colliders:
-  - {fileID: 8152338858339746047}
-  - {fileID: 47951211764127880}
-  - {fileID: 1449932275852663590}
-  - {fileID: 3535601844880551492}
-  - {fileID: 4510050545199835367}
-  - {fileID: 6564187034257661918}
+  m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -11217,9 +11187,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3008133853196538000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356a81396b9e8824ab7980c90065f975, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b0181cefe52d6240adc515242421a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactable: {fileID: 3008133853196538002}
+  actionInstantannee: 1
+  isSelected: 0
+  interactorPosition: {x: 0, y: 0, z: 0}
+  tiroir: {fileID: 3008133853196538000}
 --- !u!65 &3535601843969957101
 BoxCollider:
   m_ObjectHideFlags: 0
