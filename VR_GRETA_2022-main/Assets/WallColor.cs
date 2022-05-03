@@ -26,7 +26,7 @@ public class WallColor : MonoBehaviour
 
     private void ColorChange()
     {
-        if (index < 1)
+        if (index<wallColorChange.Length-1)
         {
             index++;
             _renderer.material = wallColorChange[index];
