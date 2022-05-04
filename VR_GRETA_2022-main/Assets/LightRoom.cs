@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Light : MonoBehaviour
+public class LightRoom : MonoBehaviour
 {
     public GameObject spotlight;
     public GameObject lightobject;

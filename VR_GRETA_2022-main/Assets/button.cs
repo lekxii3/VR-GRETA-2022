@@ -9,7 +9,7 @@ using Button = UnityEngine.UI.Button;
 public class button : MonoBehaviour
 {
     public XRSimpleInteractable _button;
-    public Light light;
+    public LightRoom light;
     public bool lightON = false;
     
     

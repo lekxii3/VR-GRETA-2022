@@ -9,7 +9,7 @@ public class BaseActionnable : MonoBehaviour
     public XRSimpleInteractable interactable;
     public bool actionInstantannee = true;
     public bool isSelected = false;
-    public Vector3 interactorPosition;
+    public Transform interactorPosition;
 
 
     private void OnEnable()
@@ -28,7 +28,7 @@ public class BaseActionnable : MonoBehaviour
         if (!actionInstantannee)
         {
             isSelected = true;
-            interactorPosition = args.interactorObject.transform.position;
+            interactorPosition = args.interactorObject.transform;
         }
         else
         {
@@ -41,7 +41,6 @@ public class BaseActionnable : MonoBehaviour
         if (!actionInstantannee)
         {
             isSelected = false;
-            interactorPosition = Vector3.zero;
         }
     }
 
@@ -59,7 +58,7 @@ public class BaseActionnable : MonoBehaviour
     {
         if (isSelected)
         {
-            ActionContinue(interactorPosition);
+            ActionContinue(interactorPosition.position);
         }
     }
 }
