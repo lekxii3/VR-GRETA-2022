@@ -1,24 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LightRoom : MonoBehaviour
+
+// dire à Gilbert s'il serait pas mieux de le mettre en héritage du button
+
+
 {
     public GameObject spotlight;
     public GameObject lightobject;
     
+
+   
+    
     public void Jeteinds()
     {
-        Debug.Log("clic1");
-        spotlight.SetActive(false);    
+        
+        spotlight.SetActive(false);
         lightobject.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
         
     }
     
     public void Jallume()
     {
-        Debug.Log("clic2");
-        spotlight.SetActive(true);    
+        
+        spotlight.SetActive(true);
         lightobject.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
     }
 }

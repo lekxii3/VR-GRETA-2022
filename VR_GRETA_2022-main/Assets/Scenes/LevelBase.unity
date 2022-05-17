@@ -1527,6 +1527,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 9b8eadc4de0544646b75ddcc43f8fd06, type: 2}
   - {fileID: 2100000, guid: c532880e607f8c84d8b9bf0c46a522ad, type: 2}
   index: 0
+  dataValues: {fileID: 0}
 --- !u!1 &447263497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,8 +1572,8 @@ GameObject:
   - component: {fileID: 448561648}
   - component: {fileID: 448561647}
   - component: {fileID: 448561646}
-  - component: {fileID: 448561650}
   - component: {fileID: 448561649}
+  - component: {fileID: 448561650}
   m_Layer: 0
   m_Name: Interrupteur
   m_TagString: Untagged
@@ -1744,16 +1745,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 448561644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf1ffeb6c67ef7a4cb91be4a2086a521, type: 3}
+  m_Script: {fileID: 11500000, guid: ab4adda431e741248b6c4d55a2bc5bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 448561649}
-  actionInstantannee: 1
-  isSelected: 0
-  interactorPosition: {fileID: 0}
-  spotlight: {fileID: 1485231911}
-  lightobject: {fileID: 242799090}
-  state: 1
+  _button: {fileID: 448561649}
+  light: {fileID: 981590975}
+  lightON: 0
+  dataValues: {fileID: 11400000, guid: a79bee4197269774285e351417381bc5, type: 2}
 --- !u!1 &461868777
 GameObject:
   m_ObjectHideFlags: 0

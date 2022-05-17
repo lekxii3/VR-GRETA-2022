@@ -7,7 +7,16 @@ public class WallColor : MonoBehaviour
 {
     public Material[] wallColorChange;
     [SerializeField] private int index = 0;
-    private Renderer _renderer;
+    public Renderer _renderer;
+    public ScriptableObjectData dataValues;
+
+
+    private void Awake()
+    {
+        index = dataValues.indexForWallColors;
+        _renderer.material = wallColorChange[index];
+    }
+
 
     private void Start()
     {
@@ -37,6 +46,8 @@ public class WallColor : MonoBehaviour
             _renderer.material = wallColorChange[index];
 
         }
-        
+
+        dataValues.indexForWallColors = index;
+
     }
 }

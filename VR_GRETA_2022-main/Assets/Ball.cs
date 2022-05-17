@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
 {
     public XRSimpleInteractable ball;
     [SerializeField] private Light _lightComponent;
-    private bool hover = false;
+    //private bool hover = false;
     public Transform player;
     public Canvas display;
 

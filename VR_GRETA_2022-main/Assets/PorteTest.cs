@@ -19,8 +19,8 @@ public class PorteTest : BaseActionnable
     {
         base.ActionContinue(interactorPositionArgs);
         //différence entre la position actuelle du controller en Z et précédente position du controller en Z 
-        float delta = 0f;
-        transform.position = _basePosition;
+        //float delta = 0f;
+        //transform.position = _basePosition;
         //transform.rotation = new Quaternion(_baseRotation.x, Mathf.Clamp(transform.rotation.y+delta,0f,-90f),_baseRotation.z,Quaternion.identity);
         
     }
