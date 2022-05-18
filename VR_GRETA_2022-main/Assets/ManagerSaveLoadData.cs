@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class ManagerSaveLoadData : MonoBehaviour
@@ -10,11 +12,11 @@ public class ManagerSaveLoadData : MonoBehaviour
     public ScriptableObjectData dataValues;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Keyboard.current.sKey.wasPressedThisFrame)
         {
             SaveToJson();
         }
-        if(Input.GetKeyDown (KeyCode.L))
+        if(Keyboard.current.lKey.wasPressedThisFrame)
         {
             LoadFromJson();
         }
@@ -32,9 +34,17 @@ public class ManagerSaveLoadData : MonoBehaviour
     private void LoadFromJson()
     {
         string filePath = Application.persistentDataPath + "/DataValues.json";
-        string data = System.IO.File.ReadAllText(filePath);
+        
+        Debug.Log(filePath);
+        if (File.Exists(filePath))
+        {
+            string data = System.IO.File.ReadAllText(filePath);
+            JsonUtility.FromJsonOverwrite(data, dataValues);
 
-        dataValues = JsonUtility.FromJson<ScriptableObjectData>(data);
-        Debug.Log("load effectué");
+        }
+        else
+        {
+            print("fichier n'existe pas");
+        }
     }
 }

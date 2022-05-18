@@ -21,7 +21,7 @@ public class TiroirTest : BaseActionnable
    protected override void ActionContinue(Vector3 interactorPositionArgs)
    {
       base.ActionContinue(interactorPositionArgs);
-
+      Debug.Log("testtiroir");
       transform.rotation = rotationTiroir;
       
       if (lastPositionController == 0f)

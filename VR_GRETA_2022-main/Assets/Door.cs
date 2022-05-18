@@ -27,20 +27,13 @@ public class Door : BaseActionnable
         if (lastPositionController == new Vector3(0,0,0))
         {
             lastPositionController = interactorPositionArgs;
-            Debug.Log("1:" + interactorPositionArgs);
         }
 
         Vector3 DC1 = interactorPositionArgs - doorPosition;
         Vector3 DC2 = lastPositionController - doorPosition;
         
-        Debug.Log("2:" + DC1);
-        Debug.Log("3:" + DC2);
-        
-
         delta = Vector3.SignedAngle(DC1, DC2, Vector3.up);
         
-        Debug.Log( "4:"+ delta);
-
         transform.rotation = Quaternion.Euler(doorRotation.eulerAngles.x, doorRotation.eulerAngles.y + delta, doorRotation.eulerAngles.z);
         
 
